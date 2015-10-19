@@ -56,8 +56,8 @@ while 1:
             #if event.key == pygame.K_f: fog.paint()
             if event.key == pygame.K_s: fog.save(test_mask_filename,v_offset,h_offset)
             if event.key == pygame.K_l: fog.load(test_mask_filename)
-            if event.key == pygame.K_q: fog.fillgrid(1)
-            if event.key == pygame.K_w: fog.fillgrid(0)
+            #if event.key == pygame.K_q: fog.fillgrid(1)
+            #if event.key == pygame.K_w: fog.fillgrid(0)
             if v_offset > 0: v_offset=0
             if h_offset > 0: h_offset=0
             if v_offset < background.max_offset('y'): v_offset=background.max_offset('y')

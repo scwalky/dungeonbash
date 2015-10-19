@@ -5,7 +5,7 @@ import pygame
 import math
 import pickle
 
-white=(120, 120, 100 )
+white=(120, 120, 255 )
 transparent=(255,0,255)
 
 class foglayer(object):
