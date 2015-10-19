@@ -9,7 +9,8 @@ class mapimage(object):
         self.img_max_h_offset=0
         self.img_max_v_offset=0
     def load(self,filename, h,w,indent_x=0,indent_y=0):
-        self.mapsurf = pygame.image.load(filename)        
+        self.loadmapsurf = pygame.image.load(filename) 
+        self.mapsurf= self.loadmapsurf.convert()       
         self.rect = self.mapsurf.get_rect()
         # Check parameters to see if we are cropping the image
         add=indent_x+indent_y

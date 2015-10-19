@@ -13,8 +13,8 @@ class foglayer(object):
         self.Matrix={}
         self.width=width
         self.height=height
-        self.x_blocks=math.floor(width/blocksize)+1
-        self.y_blocks=math.floor(height/blocksize)+1
+        self.x_blocks=int(math.floor(width/blocksize)+1)
+        self.y_blocks=int(math.floor(height/blocksize)+1)
         self.blocksize=blocksize
         self.surface=pygame.Surface((width,height))
         self.clear()
@@ -60,6 +60,7 @@ class foglayer(object):
             else:
                 print('Adding Block')
                 self.Matrix[block_x, block_y]=1
+        self.paint()
                 
     def clearblock(self,block_x,block_y):
         if (block_x, block_y) in self.Matrix.keys():
@@ -98,11 +99,12 @@ class foglayer(object):
                         self.paintblock(block_x-x, block_y-x)
                         self.paintblock(block_x-x, block_y+y)
                         self.paintblock(block_x-x, block_y+x)
+	self.paint()
             
     def blockstate(self,block_x,block_y):
         return self.Matrix[block_x,block_y]
     
-    def save(self, filename, v_offset, h_offset):
+    def save(self, filename,v_offset,h_offset):
         file = open(filename,'wb')
         pickle.dump(self.Matrix,file)
         pickle.dump(v_offset, file)
